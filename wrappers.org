@@ -1,0 +1,35 @@
+#+TITLE: Bookmark Wrapper Loader
+#+AUTHOR: octo
+#+LANGUAGE: en
+
+* Purpose
+This script provides a shell function =b= that uses the =bookmarker= CLI tool
+to quickly jump to bookmarked directories.
+
+* Bash and Zsh
+Bash-compatible wrapper must be written in POSIX shell syntax.
+To load it into your shell session:
+
+#+begin_quote
+source bookmarker_wrapper.sh
+#+end_quote
+
+This adds the =b= function to your environment, allowing:
+#+begin_quote
+b key   # runs `bookmarker quick key` and cd's to the result
+#+end_quote
+
+* Fish Shell
+Fish has its own syntax and cannot source POSIX scripts directly.
+
+To load the wrapper:
+
+#+begin_quote
+source bookmarker_wrapper.fish
+#+end_quote
+
+This defines a =b= function using Fish syntax.
+
+* Why separate files?
+Fish is not POSIX-compliant. It cannot =source= shell scripts like Bash or Zsh.
+Each shell needs its own syntax-compatible wrapper.
